@@ -67,7 +67,7 @@ def story_detail(request,id):
     similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-publish')[:3]
     
     #############
-    return render(request,'story/story_detail.html',{'story':story,'like_story':like_story,'similar_posts':similar_posts})
+    return render(request,'story/story_detail.html',{'story':story,'like_story':like_story,})
    ############## 
 
 
