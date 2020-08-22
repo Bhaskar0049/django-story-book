@@ -77,7 +77,7 @@ def search_story(request):
     if request.method =="GET"  :
         query=request.GET.get("search")  
         results=Story.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
-    return render(request,'story/search.html',{'query':query,'results':results,'similar_posts': similar_posts})    
+    return render(request,'story/search.html',{'query':query,'results':results,})    
 
 
 
